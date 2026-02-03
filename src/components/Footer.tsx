@@ -165,9 +165,9 @@ const Footer: React.FC = () => {
               <p className="text-xs mt-1">Est. 1980 • 45 Years of Service</p>
             </div>
             <div className="text-center md:text-right">
-              <a href="#" className="hover:text-primary transition-colors duration-300">Privacy Policy</a>
+              <button className="hover:text-primary transition-colors duration-300 bg-none border-none cursor-pointer p-0">Privacy Policy</button>
               <span className="mx-2">|</span>
-              <a href="#" className="hover:text-primary transition-colors duration-300">Terms of Service</a>
+              <button className="hover:text-primary transition-colors duration-300 bg-none border-none cursor-pointer p-0">Terms of Service</button>
             </div>
           </div>
         </div>

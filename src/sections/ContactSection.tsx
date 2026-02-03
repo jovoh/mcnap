@@ -163,7 +163,7 @@ const ContactSection: React.FC = () => {
                         {...register('phone', { 
                           required: 'Phone number is required',
                           pattern: {
-                            value: /^[+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/,
+                            value: /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/,
                             message: 'Invalid phone number'
                           }
                         })}

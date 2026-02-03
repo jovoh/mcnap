@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface Testimonial {
   id: number;
@@ -62,13 +62,13 @@ const TestimonialsSection: React.FC = () => {
     }
   ];
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     if (!isAnimating) {
       setIsAnimating(true);
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
       setTimeout(() => setIsAnimating(false), 500);
     }
-  };
+  }, [isAnimating, testimonials.length]);
 
   const prevTestimonial = () => {
     if (!isAnimating) {
@@ -81,7 +81,7 @@ const TestimonialsSection: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(nextTestimonial, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [nextTestimonial]);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
